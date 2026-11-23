@@ -13,7 +13,7 @@ function Index() {
       className="flex min-h-screen items-center justify-center"
       style={{ backgroundColor: "#fcfbf8" }}
     >
-      <img"
+      <img
         src="https://cdn.gpteng.co/blank-app-v1.svg"
         alt="Your app will live here!"
       />
