@@ -1,22 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "../components/milo/Header";
+import { Hero } from "../components/milo/Hero";
+import { About } from "../components/milo/About";
+import { Products } from "../components/milo/Products";
+import { Contact } from "../components/milo/Contact";
+import { Footer } from "../components/milo/Footer";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Products />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
