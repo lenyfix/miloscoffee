@@ -1,5 +1,5 @@
+
 import { Boxes, Leaf, Coffee } from "lucide-react";
-import beans from "@/assets/coffee-beans.webp.asset.json";
 import { Reveal } from "./Reveal";
 
 const pills = [
@@ -24,7 +24,7 @@ export function About() {
           ))}
         </Reveal>
         <Reveal delay={150} className="relative min-h-[180px] overflow-hidden rounded-[1.75rem] sm:row-span-2">
-          <img src={beans.url} alt="Grains de café torréfiés" loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+          <img src="/images/coffee-beans.png" alt="Grains de café torréfiés" loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 to-transparent" />
           <p className="relative p-6 pt-14 text-xl leading-tight text-cream"><strong className="font-bold">Café<br />sélectionné</strong><br /><span className="text-lg">avec soin</span></p>
         </Reveal>

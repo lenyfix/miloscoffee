@@ -1,6 +1,6 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.webp.asset.json";
 
 const left = [{ href: "#accueil", label: "Accueil" }, { href: "#univers", label: "Notre univers" }];
 const right = [{ href: "#cafes", label: "Nos cafés" }, { href: "#contact", label: "Contact" }];
@@ -22,11 +22,11 @@ export function Header() {
     <header className="relative z-30 mx-auto max-w-[1180px] px-5 pt-4 md:px-8">
       <nav aria-label="Navigation principale" className="hidden grid-cols-[1fr_auto_1fr] items-center md:grid">
         <div className="flex justify-evenly"><NavItem {...left[0]!} active /><NavItem {...left[1]!} /></div>
-        <a href="#accueil" aria-label="Milo's Coffee — accueil"><img src={logo.url} alt="Milo's Coffee" className="h-12 w-auto transition-transform duration-300 hover:scale-105 lg:h-14" /></a>
+        <a href="#accueil" aria-label="Milo's Coffee — accueil"><img src="/images/logo.png" alt="Milo's Coffee" className="h-12 w-auto transition-transform duration-300 hover:scale-105 lg:h-14" /></a>
         <div className="flex justify-evenly">{right.map((l) => <NavItem key={l.href} {...l} />)}</div>
       </nav>
       <div className="flex items-center justify-between md:hidden">
-        <a href="#accueil"><img src={logo.url} alt="Milo's Coffee" className="h-10 w-auto" /></a>
+        <a href="#accueil"><img src="/images/logo.png" alt="Milo's Coffee" className="h-10 w-auto" /></a>
         <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"} className="grid size-11 place-items-center rounded-full bg-espresso text-cream">
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>

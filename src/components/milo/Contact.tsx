@@ -1,6 +1,6 @@
+
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import banner from "@/assets/contact-banner.webp.asset.json";
 import { Reveal } from "./Reveal";
 
 const field = "w-full rounded-2xl border border-transparent bg-cream/95 px-5 py-3 text-sm text-espresso placeholder:text-espresso/70 outline-none transition focus:border-caramel focus:ring-2 focus:ring-cream/60";
@@ -8,21 +8,28 @@ const field = "w-full rounded-2xl border border-transparent bg-cream/95 px-5 py-
 export function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const d = new FormData(e.currentTarget);
     const name = String(d.get("name") ?? "").trim();
     const email = String(d.get("email") ?? "").trim();
     const errs: Record<string, string> = {};
+
     if (name.length < 2) errs["name"] = "Merci d'indiquer votre nom.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs["email"] = "Adresse e-mail invalide.";
+
     setErrors(errs);
-    if (Object.keys(errs).length === 0) { setSent(true); e.currentTarget.reset(); }
+    if (Object.keys(errs).length === 0) {
+      setSent(true);
+      e.currentTarget.reset();
+    }
   }
+
   return (
     <section id="contact" className="mx-auto max-w-[1180px] scroll-mt-6 px-3 py-8 md:px-6">
       <div className="relative isolate overflow-hidden rounded-[2rem] bg-chocolate shadow-soft md:rounded-[2.75rem]">
-        <img src={banner.url} alt="Canette Milo's Coffee plongée dans une mousse de café" loading="lazy" className="absolute inset-0 -z-10 h-full w-full object-cover object-[45%_50%]" />
+        <img src="/images/contact-banner.png" alt="Canette Milo's Coffee plongée dans une mousse de café" loading="lazy" className="absolute inset-0 -z-10 h-full w-full object-cover object-[45%_50%]" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-espresso/50 via-transparent to-espresso/30 max-md:bg-espresso/55" />
         <div className="grid gap-8 p-7 sm:p-10 md:min-h-[440px] md:grid-cols-[1fr_0.8fr_1fr] md:items-center md:p-12">
           <Reveal>

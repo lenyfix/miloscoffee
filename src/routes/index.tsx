@@ -1,36 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/milo/Header";
-import { Hero } from "@/components/milo/Hero";
-import { About } from "@/components/milo/About";
-import { Products } from "@/components/milo/Products";
-import { Contact } from "@/components/milo/Contact";
-import { Footer } from "@/components/milo/Footer";
 
+// The home route ships no og:image, so serve-time hosting can inject the
+// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Milo's Coffee — Le café glacé qui réveille vos sens" },
-      { name: "description", content: "Milo's Coffee : cafés glacés modernes et gourmands. Découvrez l'Americano, le Caramel Latte et le Mocha Cream." },
-      { property: "og:title", content: "Milo's Coffee — Le café glacé qui réveille vos sens" },
-      { property: "og:description", content: "Cafés glacés modernes et gourmands : Americano, Caramel Latte, Mocha Cream." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
   component: Index,
 });
 
+// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Products />
-        <Contact />
-      </main>
-      <Footer />
+    <div
+      className="flex min-h-screen items-center justify-center"
+      style={{ backgroundColor: "#fcfbf8" }}
+    >
+      <img"
+        src="https://cdn.gpteng.co/blank-app-v1.svg"
+        alt="Your app will live here!"
+      />
     </div>
   );
 }

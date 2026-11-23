@@ -1,15 +1,13 @@
+
 import { useState } from "react";
 import { ArrowRight, X } from "lucide-react";
-import americano from "@/assets/americano.webp.asset.json";
-import caramel from "@/assets/caramel-latte.webp.asset.json";
-import mocha from "@/assets/mocha-cream.webp.asset.json";
 import { Bean } from "./Bean";
 import { Reveal } from "./Reveal";
 
 const products = [
-  { name: "Americano", img: americano.url, btn: "bg-espresso", desc: "Un café noir intense servi sur glace, pour les amateurs de caractère." },
-  { name: "Caramel Latte", img: caramel.url, btn: "bg-chocolate", desc: "Un latte onctueux sublimé par un filet de caramel doré." },
-  { name: "Mocha Cream", img: mocha.url, btn: "bg-latte", desc: "Café, chocolat et crème fouettée : la pause la plus gourmande." },
+  { name: "Americano", img: "/images/americano.png", btn: "bg-espresso", desc: "Un café noir intense servi sur glace, pour les amateurs de caractère." },
+  { name: "Caramel Latte", img: "/images/caramel-latte.png", btn: "bg-chocolate", desc: "Un latte onctueux sublimé par un filet de caramel doré." },
+  { name: "Mocha Cream", img: "/images/mocha-cream.png", btn: "bg-latte", desc: "Café, chocolat et crème fouettée : la pause la plus gourmande." },
 ];
 
 export function Products() {
